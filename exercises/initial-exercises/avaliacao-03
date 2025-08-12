@@ -6,8 +6,9 @@ dist_atual = 0
 
 while dist_atual < dist_alvo:
     # Calcula soma dos pares menores que a distância atual
+    prox_k = dist_atual + 1
     soma_pares = 0
-    for i in range(dist_atual):
+    for i in range(prox_k):
         if i % 2 == 0:  # número par
             soma_pares += i
     soma_pares += 1  # mais 1 conforme regra
@@ -20,7 +21,7 @@ while dist_atual < dist_alvo:
         break
 
     # Atualiza distância e combustível
-    dist_atual += 1
+    dist_atual = prox_k
     combustivel -= consumo
 
     # Mostra como inteiros
